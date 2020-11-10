@@ -1,0 +1,48 @@
+PROGRAM PLC_PRG
+VAR
+	TimeOfDay:TOD;
+
+	(*Input*)
+	Start: BOOL;
+	LS2: BOOL;
+	LS1: BOOL;
+	heater_start: BOOL;
+	in_flow_value:REAL;
+	Heater:BOOL;
+	input_slider:REAL;
+	input_slider2:DINT;
+	drain_slider:REAL;
+	drain_slider2:DINT;
+	TankTemp_slider:REAL;
+	TankTemp_slider2:DINT;
+	Tank_Temp:DINT;
+
+	(*Output*)
+	heat_ton1: TON;
+	out_valve: BOOL;
+	in_valve: BOOL;
+
+	(*Water Height Calculation*)
+	tank_fill: REAL;
+	FreshWaterTemp:REAL;
+	TankArea: REAL;
+	Pi: REAL;
+	Radius: REAL;
+	WaterHeight: REAL;
+	WaterHeight2:DINT;
+
+	(*Water in tank Final Temp calculation*)
+	HeatedWaterV1:REAL;
+	HeatedWaterT1:REAL;
+	ChilledWaterV2:REAL;
+	ChilledWaterT2:REAL;
+	Water_Tfinal:REAL;
+
+	(*Heater*)
+	TimeToHeat: REAL;
+	CurrentWaterVolume: REAL; (*In Litres*)
+	TargetTempFreshTempDifference: REAL;
+	Numerator: REAL;
+	Numerator2: REAL;
+	heat_timer: BOOL;
+END_VAR
